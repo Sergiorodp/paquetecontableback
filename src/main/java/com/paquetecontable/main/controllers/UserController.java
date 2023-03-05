@@ -3,29 +3,31 @@ package com.paquetecontable.main.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.graphql.data.method.annotation.QueryMapping;
+import org.springframework.stereotype.Controller;
 
+import com.paquetecontable.main.Models.Client.PUC.PUCClientModel;
 import com.paquetecontable.main.Models.User.User;
 import com.paquetecontable.main.bussines.UserBussines;
 
-@RestController
-@RequestMapping("/api/v1/user")
+@Controller
 public class UserController {
 
     @Autowired
     private UserBussines bussines;
 
-    @GetMapping(value = "/create")
-    @ResponseBody
+    @QueryMapping
     public User createUserController(){
         return bussines.createUserService();
     }
 
-    @GetMapping(value = "/getAll")
+    @QueryMapping
     public List<User> getAllController(){
         return bussines.getAllService();
+    }
+
+    @QueryMapping
+    public List<PUCClientModel> getCodesController(){
+        return bussines.getCodesBussines();
     }
 }

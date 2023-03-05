@@ -1,0 +1,10 @@
+type Query{
+    getUsers : [User]
+}
+
+type User {
+    nombre : String,
+    apellido : String,
+    correo : String,
+    
+}
