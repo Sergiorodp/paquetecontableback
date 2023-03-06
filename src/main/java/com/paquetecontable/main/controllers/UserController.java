@@ -21,8 +21,8 @@ public class UserController {
         return bussines.createUserService();
     }
 
-    @QueryMapping
-    public List<User> getAllController(){
+    @QueryMapping(name = "getUsers")
+    public List<User> getUsersController(){
         return bussines.getAllService();
     }
 
