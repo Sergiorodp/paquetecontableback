@@ -9,12 +9,19 @@ public class Auditoria {
     @Id
     private String id;
 
+    private String correlationId;
     private String datosEntrada;
     private String operacion;
     private String datosSalida;
     private String funcion;
     private String estado;
 
+    public String getCorrelationId() {
+        return correlationId;
+    }
+    public void setCorrelationId(String correlationId) {
+        this.correlationId = correlationId;
+    }
     public String getId() {
         return id;
     }

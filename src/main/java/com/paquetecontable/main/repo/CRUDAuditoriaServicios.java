@@ -7,4 +7,7 @@ import com.paquetecontable.main.Models.AuditoriaServicios.Auditoria;
 
 public interface CRUDAuditoriaServicios extends MongoRepository<Auditoria, String>{
     
+    @Query
+    Auditoria findByCorrelationId(String id);
+
 }
