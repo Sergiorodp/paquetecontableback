@@ -11,10 +11,10 @@ import com.paquetecontable.main.client.PUCServiceCLient;
 public class PUCBussines {
 
     @Autowired
-    private PUCServiceCLient client;
+    private PUCServiceCLient pucClient;
 
     public List<PUCClientModel> getCodesBussines(){
-        return client.getCodesServiceCLient();
+        return pucClient.getCodesServiceCLient();
     }
 
 }
